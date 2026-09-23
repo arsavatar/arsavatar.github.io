@@ -101,7 +101,7 @@
   }
   .nav-links a:hover { color: var(--link); text-decoration: none; }
 
-  /* ===================== 1.1 标题区 ===================== */
+
   .hero {
     padding: 64px 0 28px;
     text-align: center;
@@ -154,7 +154,7 @@
     padding: 5px 18px;
   }
 
-  /* ===================== 1.2 链接按钮区 ===================== */
+
   .links {
     display: flex;
     flex-wrap: wrap;
@@ -190,7 +190,7 @@
   .btn:active { transform: translateY(0); }
   .btn:focus-visible { outline: 3px solid rgba(0, 102, 204, .45); outline-offset: 2px; }
 
-    /* ===================== 1.25 Pipeline 图（位于 Abstract 上方） ===================== */
+
   .pipeline-figure {
     margin: 0 auto;
     max-width: 1000px;
@@ -203,7 +203,7 @@
     display: block;
     border-radius: var(--radius);
     box-shadow: var(--shadow-md);
-    background: linear-gradient(135deg, #e7eaee 0%, #d3d8de 100%);  /* 图片加载前的占位底色 */
+    background: linear-gradient(135deg, #e7eaee 0%, #d3d8de 100%);  
   }
   .pipeline-figure a { display: block; }
 
@@ -217,7 +217,7 @@
   }
   .pipeline-caption strong { color: var(--text); }
 
-  /* ===================== 1.3 Abstract ===================== */
+
   #abstract { padding-top: 56px; }
 
   .abstract-text {
@@ -231,8 +231,7 @@
   }
   .abstract-text strong { color: var(--text); }
 
-  /* ===================== 1.4 左右对照拖拽图（双面板） ===================== */
-  /* 两个并排的对比面板；窄屏自动堆叠成一列 */
+
   .cmp-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -241,7 +240,7 @@
 
   .cmp-panel { display: flex; flex-direction: column; min-width: 0; }
 
-  /* 面板顶部工具条：左边 A 组、右边 B 组，分别控制分割线两侧的画面 */
+
   .cmp-toolbar {
     display: flex;
     align-items: center;
@@ -278,14 +277,14 @@
   }
   .cmp-group[data-side="b"] .cmp-badge { background: var(--link); }
 
-  /* 共享的 actor 选择器：图标区分于左右两侧的 A / B */
+
   .cmp-badge-actor { background: #5a5f66; font-size: .68rem; }
   .cmp-badge-actor i { line-height: 22px; }
 
-  /* 右侧成对出现的两个 map 选择器 */
+
   .cmp-maps { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
-  /* 下拉框：去掉原生外观，做成轻量的文字按钮 */
+
   .cmp-select {
     appearance: none;
     -webkit-appearance: none;
@@ -309,13 +308,13 @@
   }
   .cmp-select:hover { color: var(--link); background-color: #f2f5f8; }
   .cmp-select:focus-visible { outline: 2px solid rgba(0, 102, 204, .5); outline-offset: 1px; }
-  /* 组名比 map 名长得多（如 “AvatarReX zzr · pose 182”），单独放宽 */
+
   .cmp-select.actor-select { max-width: 210px; }
 
   .compare {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 5;           /* 占位比例，与 pro_images 画布 628x785 一致，图片加载前也保持稳定高度 */
+    aspect-ratio: 4 / 5;          
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -323,25 +322,25 @@
     cursor: ew-resize;
     user-select: none;
     -webkit-user-select: none;
-    touch-action: pan-y;            /* 允许纵向滚动，横向拖动交给滑块 */
+    touch-action: pan-y;           
   }
   .compare.is-dragging { cursor: ew-resize; }
 
-  /* 面板的一侧：A 在下层（不裁切），B 是覆盖层（按分割线裁切） */
+
   .cmp-side {
     position: absolute;
     inset: 0;
-    pointer-events: none;           /* 让事件统一落在容器上 */
+    pointer-events: none;        
     transition: opacity .2s ease;
   }
   .cmp-side.overlay {
     clip-path: inset(0 0 0 50%);
     will-change: clip-path;
   }
-  /* 该侧正在加载新图时轻微变暗，给出反馈 */
+
   .cmp-side.is-loading { opacity: .5; }
 
-  /* 每一侧只放两张图轮换（ping-pong），切换时用 opacity 交叉淡入淡出 */
+
   .cmp-img {
     position: absolute;
     inset: 0;
@@ -349,13 +348,13 @@
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity .4s ease;   /* 与 JS 里的换图时机对应 */
+    transition: opacity .4s ease;  
     -webkit-user-drag: none;
     user-select: none;
   }
   .cmp-img.is-active { opacity: 1; }
 
-  /* 画面左下 / 右下的当前选择 */
+ 
   .cmp-tag {
     position: absolute;
     bottom: 10px;
@@ -377,7 +376,7 @@
   .cmp-tag.left  { left: 10px; }
   .cmp-tag.right { right: 10px; }
 
-  /* 中间分割线 + 圆形手柄 */
+
   .compare-divider {
     position: absolute;
     top: 0;
@@ -387,7 +386,7 @@
     margin-left: -1px;
     background: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, .45);
-    pointer-events: none;           /* 手柄单独接收事件，其余区域交给容器 */
+    pointer-events: none;          
     z-index: 3;
   }
 
@@ -425,7 +424,7 @@
     max-width: 760px;
   }
 
-  /* ===================== 1.5 展示视频区 ===================== */
+
   .video-list {
     display: flex;
     flex-direction: column;
@@ -458,7 +457,7 @@
   }
   .video-caption strong { color: var(--text); }
 
-  /* ===================== 1.6 折叠图像原稿列表 ===================== */
+
   .details-box {
     max-width: 1000px;
     margin: 0 auto;
@@ -497,7 +496,7 @@
 
   .details-body { padding: 26px 24px 30px; }
 
-  /* 展开时的淡入动画 */
+
   .details-box[open] .details-body { animation: reveal .32s ease both; }
   @keyframes reveal {
     from { opacity: 0; transform: translateY(-6px); }
@@ -535,13 +534,13 @@
     text-align: center;
     border-top: 1px solid var(--border);
   }
-  /* figcaption 里的链接恢复为行内 */
+
   .figure-item figcaption a {
     display: inline;
     white-space: nowrap;
   }
 
-  /* ===================== 1.7 页脚 ===================== */
+
   footer {
     margin-top: 40px;
     padding: 34px 0 40px;
@@ -557,7 +556,7 @@
   footer .footer-links { margin-bottom: 10px; }
   footer .footer-links a { margin: 0 9px; }
 
-  /* ===================== 1.7 BibTeX ===================== */
+
   .bibtex-card {
     max-width: 1200px;
     margin: 0 auto;
@@ -568,7 +567,7 @@
     overflow: hidden;
   }
 
-  /* 卡片顶部：左侧标签，右侧复制按钮 */
+
   .bibtex-head {
     display: flex;
     align-items: center;
@@ -605,7 +604,7 @@
   .bibtex-copy i { font-size: .9rem; }
   .bibtex-copy:hover { background: #2f3338; border-color: #2f3338; color: #ffffff; }
   .bibtex-copy:focus-visible { outline: 3px solid rgba(0, 102, 204, .45); outline-offset: 2px; }
-  /* 复制成功 / 失败的短暂反馈，由 JS 加上再移除 */
+
   .bibtex-copy.is-copied { background: #1f7a4d; border-color: #1f7a4d; color: #ffffff; }
   .bibtex-copy.is-failed { background: #a3341f; border-color: #a3341f; color: #ffffff; }
 
@@ -618,14 +617,12 @@
     line-height: 1.72;
     color: #2f3338;
     tab-size: 2;
-    /* 长 booktitle 行会超出卡片宽度，用 pre-wrap 换行而不是横向滚动，
-       避免条目被截断看不全（复制的内容不受影响） */
+
     white-space: pre-wrap;
     overflow-wrap: break-word;
   }
 
-  /* ===================== 响应式 ===================== */
-  /* 面板放不下并排时（含工具条换行空间）改为上下堆叠 */
+
   @media (max-width: 1024px) {
     .cmp-grid { grid-template-columns: 1fr; gap: 34px; }
   }
@@ -644,7 +641,7 @@
     .authors { font-size: .98rem; line-height: 1.85; }
     .affiliations { font-size: .9rem; }
 
-    .nav-links { display: none; }   /* 移动端隐藏导航链接，保留品牌名 */
+    .nav-links { display: none; } 
 
     .links { gap: 10px; }
     .btn { padding: 9px 18px; font-size: .88rem; }
@@ -653,11 +650,11 @@
     
     .pipeline-caption { font-size: .88rem; margin-top: 14px; }
 
-    /* 拖拽图在移动端高度自适应（与桌面端保持一致的竖向比例） */
+   
     .compare { aspect-ratio: 4 / 5; }
     .compare-handle { width: 44px; height: 44px; font-size: .72rem; }
 
-    /* 工具条允许换行，A / B 两组各占一行 */
+
     .cmp-toolbar { gap: 8px; }
     .cmp-select { font-size: .8rem; max-width: 104px; }
     .cmp-tag { font-size: .68rem; padding: 3px 9px; }
@@ -676,7 +673,7 @@
     .container { padding: 0 18px; }
   }
 
-  /* 尊重用户的“减少动效”偏好 */
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after {
@@ -686,13 +683,13 @@
   }
 
   #results .container {
-    max-width: 1500px;   /* 想多宽改这里，比如 1600px / 1800px */
+    max-width: 1500px;   
     }
 </style>
 </head>
 <body>
 
-<!-- ===================== 顶部导航（可选） ===================== -->
+
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-brand" href="#top">ARS-Avatar</a>
@@ -706,13 +703,13 @@
   </div>
 </nav>
 
-<!-- ===================== 1.1 标题区 ===================== -->
+
 <header class="hero" id="top">
   <div class="container">
 
     <h1 class="paper-title">ARS-Avatar: Animatable and Relightable Surfel Avatars with Learnable Ambient Occlusion</h1>
 
-    <!-- TODO -->
+    <!-- TODO: author homepage -->
     <p class="authors">
       <a href="https://github.com/Jiatttliu">Jiateng Liu</a><sup>1</sup>,
       <a href="#">Hao Gao</a><sup>1</sup>,
@@ -733,9 +730,9 @@
     <!-- <p class="venue">CVPR 2027</p> -->
     <p class="venue">Arxiv Preprint</p> 
 
-    <!-- ===================== 1.2 链接按钮区 ===================== -->
+
     <div class="links">
-      <!-- TODO: 把 href="#" 换成真实链接 -->
+      <!-- TODO: arxiv and poster href -->
       <a class="btn" href="src/paper.pdf" target="_blank" rel="noopener">
         <i class="fa-solid fa-file-pdf"></i><span>Paper</span>
       </a>
@@ -758,7 +755,7 @@
   </div>
 </header>
 
-<!-- ===================== 1.25 Pipeline 图 ===================== -->
+
 <section id="pipeline">
   <div class="container">
     <figure class="pipeline-figure">
@@ -778,7 +775,7 @@
   </div>
 </section>
 
-<!-- ===================== 1.3 Abstract ===================== -->
+
 <section id="abstract">
   <div class="container">
     <h2 class="section-title">Abstract</h2>
@@ -801,7 +798,7 @@
   </div>
 </section>
 
-<!-- ===================== 1.4 左右对照拖拽图 ===================== -->
+
 <section id="comparison">
   <div class="container">
     <h2 class="section-title">Interactive Comparison</h2>
@@ -901,7 +898,7 @@
   </div>
 </section>
 
-<!-- ===================== 1.5 展示视频区 ===================== -->
+
 <section id="results">
   <div class="container">
     <h2 class="section-title">Video Results</h2>
@@ -914,10 +911,9 @@
           <source src="src/actor01_demo.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <!-- TODO: 替换视频说明 -->
+        
         <p class="video-caption">
-          <strong>Novel view synthesis.</strong> Rendered results under the captured illumination
-          for a 360° camera trajectory.
+          <strong>ActorsHQ Dataset -- Actor01</strong>
         </p>
       </div>
 
@@ -927,10 +923,9 @@
           <source src="src/avatarrex_zxc_demo.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <!-- TODO: 替换视频说明 -->
+        
         <p class="video-caption">
-          <strong>Novel view synthesis.</strong> Rendered results under the captured illumination
-          for a 360° camera trajectory.
+          <strong>AvatarReX Dataset -- avatarrex_zxc</strong>
         </p>
       </div>
 
@@ -940,10 +935,9 @@
           <source src="src/avatarrex_zzr_demo.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <!-- TODO: 替换视频说明 -->
+        
         <p class="video-caption">
-          <strong>Relighting.</strong> The reconstructed avatar re-rendered under novel environment
-          maps while the camera orbits the subject.
+          <strong>AvatarReX Dataset -- avatarrex_zzr</strong>
         </p>
       </div>
 
@@ -953,9 +947,9 @@
           <source src="src/avatarrex_lbn2_demo.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <!-- TODO: 替换视频说明 -->
+        
         <p class="video-caption">
-          <strong>Animation.</strong> Pose-conditioned deformation driven by unseen motion sequences.
+          <strong>AvatarReX Dataset -- avatarrex_lbn2</strong>
         </p>
       </div>
 
@@ -963,12 +957,12 @@
   </div>
 </section>
 
-<!-- ===================== 1.6 默认折叠的图像原稿列表 ===================== -->
+
 <section id="figures">
   <div class="container">
     <h2 class="section-title">Supplementary Images</h2>
 
-    <!-- 注意：<details> 未加 open 属性，因此默认折叠 -->
+    
     <details class="details-box">
       <summary>
         <i class="fa-regular fa-images"></i>
@@ -1045,7 +1039,7 @@
   </div>
 </section>
 
-<!-- ===================== 1.7 BibTeX ===================== -->
+
 <section id="bibtex">
   <div class="container">
     <h2 class="section-title">BibTeX</h2>
@@ -1058,11 +1052,9 @@
         </button>
       </div>
       <!--
-        TODO: 替换为你的真实 BibTeX 条目。
-        下面这段 <pre> 必须顶格写 —— 里面的缩进会被原样保留并复制，
-        跟着外层缩进写会让每行都多出前导空格。
-        @inproceedings{discretizedsdf2025,
-  title     = {DiscretizedSDF: Continuous SDF Interpolation for 2D Gaussian Splatting},
+        TODO: replace with BibTeX
+        @inproceedings{arsavtar2025,
+  title     = {ARS-Avatar: Animatable and Relightable Surfel Avatars with Learnable Ambient Occlusion},
   author    = {One, Author and Two, Author and Three, Author and Four, Author},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year      = {2025}
@@ -1073,7 +1065,7 @@
   </div>
 </section>
 
-<!-- ===================== 1.8 页脚 ===================== -->
+
 <footer>
   <div class="container">
     <p class="footer-links">
