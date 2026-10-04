@@ -780,7 +780,7 @@
   <div class="container">
     <h2 class="section-title">Abstract</h2>
     <p class="abstract-text">
-      Creating animatable and relightable human avatars from multi-view images remains challenging, 
+      <!-- Creating animatable and relightable human avatars from multi-view images remains challenging, 
       as pose-dependent deformation, materials, and light visibility are intrinsically coupled in 
       images. In this paper, we present <strong>ARS-Avatar</strong>, a novel method using surfel 
       representation for high-quality, animatable, and relightable human avatars from multi-view 
@@ -793,7 +793,20 @@
       efficient approximation of light visibility that can be jointly optimized with the avatar. 
       Extensive experiments demonstrate that ARS-Avatar achieves high-fidelity appearance reconstruction 
       and physically-based material estimation, while enabling realistic animation and relighting 
-      under novel poses and illuminations. 
+      under novel poses and illuminations.  -->
+      Creating animatable and relightable human avatars from multi-view images remains challenging, 
+      as pose-dependent deformation, materials, and light visibility are tightly coupled in images. 
+      In this paper, we present <strong>ARS-Avatar</strong>, a novel method using surfel representation 
+      for high-quality, animatable, and relightable human avatars from multi-view images captured 
+      under unknown illumination. We first extract deformation priors from the template mesh and 
+      leverage them as additional guidance beyond driving poses, facilitating faithful estimation of 
+      surfel attributes. To support relighting, we employ deferred shading to estimate BRDF materials. 
+      We further introduce a differentiable screen-space ambient occlusion formulation that enables 
+      gradient-based optimization of body-part specific occlusion radii through finite differences, 
+      providing an efficient approximation of light visibility that can be jointly optimized with 
+      the avatar. Extensive experiments show that ARS-Avatar achieves competitive or improved radiance 
+      reconstruction on multiple metrics and consistently outperforms the evaluated PBR relighting 
+      baselines, while enabling realistic animation and relighting under novel poses and illuminations.
     </p>
   </div>
 </section>
